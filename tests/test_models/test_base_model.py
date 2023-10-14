@@ -23,8 +23,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual("BaseModel", my_model_json["__class__"])
 
     def test_save(self):
-        """ Checks if save method updates the public instance instance
-        attribute updated_at """
+        """Checks if save method works"""
         self.my_model.name = "first"
         self.my_model.save()
         first_dic = self.my_model.to_dict()
