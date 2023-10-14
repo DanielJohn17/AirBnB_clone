@@ -3,6 +3,7 @@
 
 import cmd
 
+
 class HBNBCommand(cmd.Cmd):
     """Class for the command interpreter."""
 
@@ -20,6 +21,7 @@ class HBNBCommand(cmd.Cmd):
     def emptyline(self):
         """Doesn't do anything on ENTER."""
         pass
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
