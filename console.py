@@ -50,14 +50,13 @@ class HBNBCommand(cmd.Cmd):
                 print("** instance id missing **")
             else:
                 key = args[0] + "." + args[1]
-                #key = "{}.{}".format(args[0], args[1])
                 if key in storage.all():
                     print(storage.all()[key])
                 else:
                     print("** no instance found **")
+
     def do_count(self, line):
-        """Counts the instances of a class.
-        """
+        """Counts the instances of a class."""
         args = line.split(' ')
         if not args[0]:
             print("** class name missing **")
@@ -65,7 +64,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
         else:
             matches = [
-                l for l in storage.all() if l.startswith(
+                lm for lm in storage.all() if lm.startswith(
                     args[0] + '.')]
             print(len(matches))
 
@@ -95,12 +94,12 @@ class HBNBCommand(cmd.Cmd):
             if words[0] not in storage.classes():
                 print("** class doesn't exist **")
             else:
-                l = [str(obj) for key, obj in storage.all().items()
-                     if type(obj).__name__ == words[0]]
-                print(l)
+                lm = [str(obj) for key, obj in storage.all().items()
+                      if type(obj).__name__ == words[0]]
+                print(lm)
         else:
-            l = [str(obj) for key, obj in storage.all().items()]
-            print(l)
+            lm = [str(obj) for key, obj in storage.all().items()]
+            print(lm)
 
     def do_update(self, line):
         """Updates an instance's attribute."""
