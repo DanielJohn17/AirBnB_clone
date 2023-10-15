@@ -31,9 +31,11 @@ class FileStorage:
     def reload(self):
         """ Deserializes __objects from the JSON file """
         from models.base_model import BaseModel
+        from models.user import User
 
         classes_dct = {
-            "BaseModel": BaseModel
+            "BaseModel": BaseModel,
+            "User": User
         }
 
         if os.path.exists(FileStorage.__file_path) is True:
