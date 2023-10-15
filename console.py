@@ -3,6 +3,11 @@
 import cmd
 from models.base_model import BaseModel
 from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 from models import storage
 
 
@@ -36,7 +41,10 @@ class HBNBCommand(cmd.Cmd):
         elif model not in HBNBCommand.class_list:
             print("** class doesn't exist **")
         else:
-            dct = {'BaseModel': BaseModel, 'User': User}
+            dct = {'BaseModel': BaseModel, 'User': User,
+                   'State': State, 'City': City,
+                   'Amenity': Amenity, 'Place': Place,
+                   'Review': Review}
             my_model = dct[model]()
             print(my_model.id)
             my_model.save()
