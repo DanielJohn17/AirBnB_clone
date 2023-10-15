@@ -24,11 +24,11 @@ class TestCity(unittest.TestCase):
 
     def test_types(self):
         """tests if the type of attribute is correct"""
-        self.assertIsInstance(self.c.id, str)
-        self.assertIsInstance(self.c.created_at, datetime)
-        self.assertIsInstance(self.c.updated_at, datetime)
-        self.assertIsInstance(self.c.state_id, str)
-        self.assertIsInstance(self.c.name, str)
+        self.assertIsInstance(self.my_city.id, str)
+        self.assertIsInstance(self.my_city.created_at, datetime)
+        self.assertIsInstance(self.my_city.updated_at, datetime)
+        self.assertIsInstance(self.my_city.state_id, str)
+        self.assertIsInstance(self.my_city.name, str)
 
 
 if __name__ == "__main__":
