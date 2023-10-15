@@ -10,7 +10,10 @@ class HBNBCommand(cmd.Cmd):
     """HBNBCommand processor"""
 
     prompt = "(hbnb) "
-    class_list = ['BaseModel', 'User']
+    class_list = ['BaseModel',
+                  'User', 'State',
+                  'City', 'Amenity',
+                  'Place', 'Review']
 
     def do_EOF(self, line):
         """Handles End Of File character."""
