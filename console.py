@@ -33,21 +33,34 @@ class HBNBCommand(cmd.Cmd):
         """Doesn't do anything on ENTER."""
         pass
 
-    def do_create(self, model):
-        """ Creates an instance according to a given class """
+    def do_create(self, line):#model):
+        # """ Creates an instance according to a given class """
 
-        if not model:
+        # if not model:
+        #     print("** class name missing **")
+        # elif model not in HBNBCommand.class_list:
+        #     print("** class doesn't exist **")
+        # else:
+        #     dct = {'BaseModel': BaseModel, 'User': User,
+        #            'State': State, 'City': City,
+        #            'Amenity': Amenity, 'Place': Place,
+        #            'Review': Review}
+        #     my_model = dct[model]()
+        #     print(my_model.id)
+        #     my_model.save()
+        """Test for do_create"""
+        try:
+            if not line:
+                raise SyntaxError()
+            my_list = line.split(" ")
+            obj = eval("{}()".format(my_list[0]))
+            print("{}".format(obj.id))
+            
+        except SyntaxError:
             print("** class name missing **")
-        elif model not in HBNBCommand.class_list:
+        except NameError:
             print("** class doesn't exist **")
-        else:
-            dct = {'BaseModel': BaseModel, 'User': User,
-                   'State': State, 'City': City,
-                   'Amenity': Amenity, 'Place': Place,
-                   'Review': Review}
-            my_model = dct[model]()
-            print(my_model.id)
-            my_model.save()
+        
 
     def do_show(self, argument):
         """ Shows string representation of the instance passed """
